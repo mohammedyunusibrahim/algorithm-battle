@@ -69,7 +69,7 @@ Hash load factor after all inserts: 0.85
 
 
 
-![Output](IMG-20261112-WA0007.JPG)
+![Output](IMG-20261112-WA0007.jpg)
 
 
 
