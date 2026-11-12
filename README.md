@@ -69,7 +69,7 @@ Hash load factor after all inserts: 0.85
 
 
 
-![Output](Screenshot(1).jpg)
+![Output](Screenshot(1).png)
 
 
 
