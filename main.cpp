@@ -2,8 +2,8 @@
 // SRM Institute of Science and Technology, Tiruchirappalli
 // 21CS201J - Data Structures and Algorithms | CLA-2 Task 3
 // ALGORITHM BATTLE - "WHICH DATA STRUCTURE WINS?"
-// Application : Library Book Search (by Book ID)
-// Student     : mohamed yunus ibrahim KS
+// Application : Student Record Search (by Student ID)
+// Student     : Mohamed yunus ibrahim
 // Register No : RA2511026050176
 // ---------------------------------------------------------------
 #include <iostream>
@@ -13,7 +13,7 @@
 #include <algorithm>
 using namespace std;
 
-struct Book {
+struct Book {          // one student record: id, name (title), department (author)
     int id;
     string title, author;
 };
@@ -182,46 +182,46 @@ public:
 // ------------------------- Dataset (40 unique records) ---------
 vector<Book> dataset() {
     return {
-        {1050, "Clean Code", "Robert C. Martin"},
-        {1025, "The Pragmatic Programmer", "Hunt & Thomas"},
-        {1075, "Introduction to Algorithms", "Cormen et al."},
-        {1010, "Design Patterns", "Gamma et al."},
-        {1040, "The C++ Programming Language", "Bjarne Stroustrup"},
-        {1060, "Effective C++", "Scott Meyers"},
-        {1090, "Effective Java", "Joshua Bloch"},
-        {1005, "Head First Java", "Sierra & Bates"},
-        {1015, "Python Crash Course", "Eric Matthes"},
-        {1030, "Fluent Python", "Luciano Ramalho"},
-        {1045, "Operating System Concepts", "Silberschatz"},
-        {1055, "Computer Networks", "Andrew Tanenbaum"},
-        {1065, "Database System Concepts", "Silberschatz"},
-        {1080, "Artificial Intelligence: A Modern Approach", "Russell & Norvig"},
-        {1095, "Pattern Recognition and Machine Learning", "Christopher Bishop"},
-        {1002, "Deep Learning", "Goodfellow et al."},
-        {1008, "Hands-On Machine Learning", "Aurelien Geron"},
-        {1012, "Data Structures Using C", "Tenenbaum"},
-        {1020, "Algorithms", "Robert Sedgewick"},
-        {1028, "The Art of Computer Programming", "Donald Knuth"},
-        {1035, "Discrete Mathematics", "Kenneth Rosen"},
-        {1042, "Compilers: Principles and Techniques", "Aho et al."},
-        {1048, "Computer Organization", "Hamacher"},
-        {1052, "Code Complete", "Steve McConnell"},
-        {1058, "Refactoring", "Martin Fowler"},
-        {1062, "Cracking the Coding Interview", "Gayle McDowell"},
-        {1070, "Algorithm Design", "Kleinberg & Tardos"},
-        {1078, "Let Us C", "Yashavant Kanetkar"},
-        {1085, "Programming in ANSI C", "E. Balagurusamy"},
-        {1092, "Think Python", "Allen Downey"},
-        {1098, "Structure and Interpretation of Computer Programs", "Abelson & Sussman"},
-        {1001, "The Mythical Man-Month", "Fred Brooks"},
-        {1004, "Concrete Mathematics", "Graham et al."},
-        {1007, "Computer Architecture", "Hennessy & Patterson"},
-        {1009, "Software Engineering", "Ian Sommerville"},
-        {1013, "Grokking Algorithms", "Aditya Bhargava"},
-        {1018, "Data Science from Scratch", "Joel Grus"},
-        {1022, "Neural Networks and Deep Learning", "Michael Nielsen"},
-        {1026, "Speech and Language Processing", "Jurafsky & Martin"},
-        {1033, "The Linux Command Line", "William Shotts"}};
+        {3010, "Arun Kumar", "CSE-AIML"},
+        {3015, "Priya Sharma", "CSE"},
+        {3021, "Karthik Raja", "IT"},
+        {3027, "Divya Lakshmi", "ECE"},
+        {3034, "Mohan Das", "EEE"},
+        {3040, "Sneha Reddy", "MECH"},
+        {3046, "Vignesh S", "CSE-AIML"},
+        {3053, "Anitha M", "CSE"},
+        {3059, "Rahul Verma", "IT"},
+        {3065, "Meena Devi", "ECE"},
+        {3072, "Surya Prakash", "CSE-AIML"},
+        {3008, "Harini K", "CSE"},
+        {3081, "Dinesh Babu", "IT"},
+        {3003, "Pooja Nair", "ECE"},
+        {3090, "Ganesh R", "EEE"},
+        {3096, "Nandhini P", "MECH"},
+        {3050, "Sanjay Kumar", "CSE-AIML"},
+        {3030, "Revathi S", "CSE"},
+        {3018, "Ajith Kumar", "IT"},
+        {3043, "Kavya Menon", "ECE"},
+        {3062, "Naveen Raj", "CSE-AIML"},
+        {3078, "Lavanya T", "CSE"},
+        {3087, "Praveen K", "IT"},
+        {3093, "Swathi R", "ECE"},
+        {3006, "Bala Murugan", "EEE"},
+        {3024, "Ishwarya V", "MECH"},
+        {3037, "Siva Kumar", "CSE-AIML"},
+        {3056, "Tamilselvi A", "CSE"},
+        {3069, "Vikram Singh", "IT"},
+        {3084, "Deepa Rani", "ECE"},
+        {3012, "Manoj Kumar", "CSE-AIML"},
+        {3099, "Janani S", "CSE"},
+        {3001, "Ashwin R", "IT"},
+        {3048, "Keerthana B", "ECE"},
+        {3075, "Hari Prasad", "EEE"},
+        {3033, "Yamini D", "MECH"},
+        {3058, "Gokul Raj", "CSE-AIML"},
+        {3091, "Shalini M", "CSE"},
+        {3020, "Mukesh K", "IT"},
+        {3067, "Bhuvana S", "ECE"}};
 }
 
 // ------------------------- Helpers -----------------------------
@@ -244,7 +244,7 @@ void showViva(BST &bst, AVL &avl, HashTable &ht, int key) {
 
 // ------------------------- Main --------------------------------
 int main() {
-    const int TABLE_SIZE = 53; // prime number
+    const int TABLE_SIZE = 61; // prime number
     vector<Book> data = dataset();
 
     BST bst; AVL avl; HashTable ht(TABLE_SIZE);
@@ -260,7 +260,7 @@ int main() {
     int bstHeightBuild = bst.height(), avlHeightBuild = avl.height();
 
     cout << "=========================================================\n";
-    cout << " ALGORITHM BATTLE - Library Book Search (by Book ID)\n";
+    cout << " ALGORITHM BATTLE - Student Record Search (by Student ID)\n";
     cout << " Records: " << data.size() << "   Hash table size: " << TABLE_SIZE << "\n";
     cout << "=========================================================\n\n";
 
@@ -285,7 +285,7 @@ int main() {
     }
 
     // ---- Unsuccessful search: keys NOT in the dataset ----
-    vector<int> missing = {1000, 1003, 1006, 1011, 1017, 1038, 1049, 1064, 1088, 1099};
+    vector<int> missing = {3000, 3002, 3005, 3009, 3014, 3028, 3045, 3060, 3079, 3098};
     Stats uB, uA, uH;
     for (int k : missing) {
         cmpCnt = 0; bst.search(k); record(uB, cmpCnt);
@@ -294,10 +294,10 @@ int main() {
     }
 
     // ---- Extra insertions after the structures are built ----
-    vector<int> newKeys = {1031, 1047, 1068, 1083, 1096};
+    vector<int> newKeys = {3004, 3016, 3052, 3070, 3095};
     Stats nB, nA, nH;
     for (int k : newKeys) {
-        Book nb{k, "New Book " + to_string(k), "Unknown"};
+        Book nb{k, "New Student " + to_string(k), "Not assigned"};
         cmpCnt = 0; bst.insert(nb); record(nB, cmpCnt);
         cmpCnt = 0; avl.insert(nb); record(nA, cmpCnt);
         cmpCnt = 0; ht.insert(nb);  record(nH, cmpCnt);
@@ -324,11 +324,11 @@ int main() {
     cout << "Hash load factor after all inserts = " << (double)(data.size() + newKeys.size()) / TABLE_SIZE << "\n";
 
     // ---- Viva / technical defense mode ----
-    cout << "\n[Technical Defense Mode] Enter a Book ID to search (0 to exit): ";
+    cout << "\n[Technical Defense Mode] Enter a Student ID to search (0 to exit): ";
     int key;
     while (cin >> key && key != 0) {
         showViva(bst, avl, ht, key);
-        cout << "\nEnter another Book ID (0 to exit): ";
+        cout << "\nEnter another Student ID (0 to exit): ";
     }
     cout << "\nDone.\n";
     return 0;
